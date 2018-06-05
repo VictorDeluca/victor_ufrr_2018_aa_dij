@@ -15,6 +15,7 @@ vector<int> dijkstra(int source){
 		for(int i=0;i<n;i++){
 			int cost = graph[u][i];
 			if(graph[u][i] != INF && dist[u] + cost < dist[i]){
+				if(Q.find(make_pair(dist[i],i))!=Q.end()) Q.erase(Q.find(make_pair(dist[i],i)));
 				dist[i] = dist[u] + cost;
 				pai[i] = u;
 				Q.insert(make_pair(dist[i],i));
