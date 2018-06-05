@@ -33,4 +33,4 @@ a->s = -2
 a->d = 1
 
 Nosso codigo ira executar infinitamente, pois s->a->s->a é um ciclo infinito, onde sempre é mais vantajoso
-voltar a 's' mais uma vez, falhando assim em gerar uma solucao (Pois ele nunca para de executar).
+voltar a 's' mais uma vez, falhando assim em gerar uma solucao (Pois ele nunca para de executar - A fila nunca esvazia).
