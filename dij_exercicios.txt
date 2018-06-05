@@ -21,6 +21,16 @@ s->a = 5
 s->d = 3
 a->d = -4
 
-O algoritmo de Dijkstra iniciara pela aresta de menor peso, s->d, e encontrando seu destino imediatamente ira
-gerar 3 como resposta. O caminho s->a->d, contudo, pesa apenas 5-4 = 1, posuindo menor custo. Neste caso, o
-algoritmo de Dijkstra gerou uma solucao incorreta.
+O algoritmo de Dijkstra iniciara pela aresta de menor peso, s->d, e encontrando seu destino algumas
+implementacoes imediatamente gerariam 3 como resposta. O caminho s->a->d, contudo, pesa apenas 5-4 = 1, 
+posuindo menor custo. Neste caso, o algoritmo de Dijkstra gerou uma solucao incorreta.
+A implementacao utilizada neste repositorio funciona para o caso anterior. Isso porque o algoritmo so
+para quando a fila estiver vazia. A complexidade muda, mas o resultado permanece correto. Para que ela
+falhe, devemos introduzir um ciclo infinito:
+s->a = 1
+s->d = 1
+a->s = -2
+a->d = 1
+
+Nosso codigo ira executar infinitamente, pois s->a->s->a é um ciclo infinito, onde sempre é mais vantajoso
+voltar a 's' mais uma vez, falhando assim em gerar uma solucao (Pois ele nunca para de executar).
