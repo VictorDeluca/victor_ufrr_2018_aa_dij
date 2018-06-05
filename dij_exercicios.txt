@@ -1,0 +1,24 @@
+Atividade 1 -
+O algoritmo de Dijkstra opera gulosamente, descobrindo o menor caminho de um vertice "source" ate todos os
+outros. Em cada passo, ele escolhe o caminho mais proximo de "source" (Em casos mais simples descrito apenas
+por sua distancia de "source") e verifica se utilizar este caminho gera uma rota otima ate qualquer no 
+adjacente ao no final desse caminho. Assumindo que todas as arestas sao positivas, quando um caminho e 
+processado nenhum dos caminhos nao-processados sera melhor que este (Todos os outros caminhos teriam custo
+maior), entao ao final do algoritmo a distancia otima de "source" a todos os nos tera sido encontrada.
+
+Atividade 3 - 
+O menor caminho de s ate b custa 5
+O menor caminho de s ate a custa 8
+O menor caminho de s ate c custa 7
+
+Atividade 4 - 
+Sejam os tres nos: s, a, d
+Onde desejamos calcular o menor caminho partindo de 's' e chegando a 'd'.
+Sejam as arestas:
+s->a = 5
+s->d = 3
+a->d = -4
+
+O algoritmo de Dijkstra iniciara pela aresta de menor peso, s->d, e encontrando seu destino imediatamente ira
+gerar 3 como resposta. O caminho s->a->d, contudo, pesa apenas 5-4 = 1, posuindo menor custo. Neste caso, o
+algoritmo de Dijkstra gerou uma solucao incorreta.
