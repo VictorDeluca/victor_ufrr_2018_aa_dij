@@ -6,6 +6,8 @@ adjacente ao no final desse caminho. Assumindo que todas as arestas sao positiva
 processado nenhum dos caminhos nao-processados sera melhor que este (Todos os outros caminhos teriam custo
 maior), entao ao final do algoritmo a distancia otima de "source" a todos os nos tera sido encontrada.
 
+Atividade 2 - Disponivel em dij.cpp
+
 Atividade 3 - 
 O menor caminho de s ate b custa 5
 O menor caminho de s ate a custa 8
