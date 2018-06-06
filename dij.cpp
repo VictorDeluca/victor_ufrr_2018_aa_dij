@@ -6,9 +6,9 @@ int graph[1001][1001],n,e; //Limite de 1000 vertices
 
 vector<int> dijkstra(int source){
 	vector<int> dist(n,INF); dist[source] = 0;
-	set<pair<int,int>> Q; Q.insert(make_pair(dist[source],source));
+	set<pair<int,int> > Q; Q.insert(make_pair(dist[source],source));
 	while(!Q.empty()){
-		auto top = Q.begin();
+		set<pair<int,int> >::iterator top = Q.begin();
 		int u = top->second;
 		Q.erase(top);
 	
@@ -26,26 +26,27 @@ vector<int> dijkstra(int source){
 }
 
 int main(){
-	int i,j;
+	int i,j; FILE *f = fopen("input.txt","r");
 	while(1){
-		scanf("%d%d",&n,&e);
+		fscanf(f,"%d%d",&n,&e);
 		if(n==0 && e==0) break;
 		for(i=0;i<n;i++) for(j=0;j<n;j++) graph[i][j] = INF;
 
 		for(i=0;i<e;i++){
-			int x,y,h; scanf("%d%d%d",&x,&y,&h); x--; y--;
+			int x,y,h; fscanf(f,"%d%d%d",&x,&y,&h); x--; y--;
 			graph[x][y] = h;
 		}
 
-		int k; scanf("%d",&k);
+		int k; fscanf(f,"%d",&k);
 		for(i=0;i<k;i++){
-			int o,d; scanf("%d%d",&o,&d); o--; d--;
+			int o,d; fscanf(f,"%d%d",&o,&d); o--; d--;
 			vector<int> lista = dijkstra(o);
 			if(lista[d]==INF) printf("Nao existe caminho entre os dois pontos\n");
 			else printf("%d\n",lista[d]);
 		}
 		printf("\n");
 	}
+	fclose(f);
 
 	return 0;
 }
